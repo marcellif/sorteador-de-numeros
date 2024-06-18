@@ -4,13 +4,18 @@ function sorteia(){
     let ate = parseInt(document.getElementById('ate').value);
 
     let numero;
-    let lista = [];
+    let listaSorteados = [];
         for (let i = 0; i< quantidade; i++){
             numero = numerosAleatoriosEntreLimites (de, ate);
-            lista.push(numero);
+
+            while (listaSorteados.includes(numero)){
+                numero = numerosAleatoriosEntreLimites (de, ate);
+            }
+            listaSorteados.push(numero);
         }
+        
     let mensagem = document.getElementById('resultado');
-    mensagem.innerHTML = `<label class="texto__paragrafo"> Numeros sorteados: ${lista} </label>`
+    mensagem.innerHTML = `<label class="texto__paragrafo"> Numeros sorteados: ${listaSorteados} </label>`
 }
 
 function numerosAleatoriosEntreLimites (min, max){
