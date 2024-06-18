@@ -9,7 +9,8 @@ function sorteia(){
             numero = numerosAleatoriosEntreLimites (de, ate);
             lista.push(numero);
         }
-    alert (`${lista}`)
+    let mensagem = document.getElementById('resultado');
+    mensagem.innerHTML = `<label class="texto__paragrafo"> Numeros sorteados: ${lista} </label>`
 }
 
 function numerosAleatoriosEntreLimites (min, max){
