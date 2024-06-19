@@ -3,6 +3,11 @@ function sorteia(){
     let de = parseInt(document.getElementById('de').value);
     let ate = parseInt(document.getElementById('ate').value);
 
+    if (de >= ate){
+        alert ("Valor inicial não pode ser maior que valor final!");
+        return;
+    }
+
     let numero;
     let listaSorteados = [];
         for (let i = 0; i< quantidade; i++){
